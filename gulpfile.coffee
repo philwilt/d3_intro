@@ -2,6 +2,12 @@ gulp = require 'gulp'
 gutil = require('gulp-util')
 sass = require 'gulp-sass'
 coffee = require 'gulp-coffee'
+express = require 'express'
+
+gulp.task 'express', ->
+  app = express()
+  app.use express.static(__dirname)
+  app.listen 4000
 
 gulp.task 'sass', ->
   gulp.src './sass/**/*.scss'
@@ -19,4 +25,4 @@ gulp.task 'coffee', ->
 gulp.task 'coffee:watch', ->
   gulp.watch './scripts/*.coffee', ['coffee']
 
-gulp.task 'default', ['sass', 'sass:watch', 'coffee', 'coffee:watch']
+gulp.task 'default', ['sass', 'sass:watch', 'coffee', 'coffee:watch', 'express']
