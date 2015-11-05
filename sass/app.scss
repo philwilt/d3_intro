@@ -1,4 +1,13 @@
 body {
-  background-color: gray;
-  text-color: red;
+}
+
+#chart {
+  rect {
+    fill: rgb(63, 231, 226);
+  }
+  text {
+    fill: white;
+    font: 10px sans-serif;
+    text-anchor: end;
+  }
 }
